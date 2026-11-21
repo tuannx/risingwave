@@ -1,0 +1,29 @@
+name: Arcade Architecture Analysis
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  arcade-architecture-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Arcade Architecture Analysis
+        uses: arcade-agent/arcade-agent/actions/analyze@v0.4.2
+        with:
+          arcade-agent-version: "0.4.2"
+          source-path: "."
+          language: rust
+          run-secondary-analyses: "false"
+          post-pr-comment: "true"
