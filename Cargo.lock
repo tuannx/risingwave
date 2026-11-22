@@ -15418,6 +15418,7 @@ version = "3.2.0-alpha"
 dependencies = [
  "anyhow",
  "console",
+ "criterion",
  "itertools 0.14.0",
  "libtest-mimic",
  "matches",

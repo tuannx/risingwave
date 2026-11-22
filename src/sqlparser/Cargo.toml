@@ -31,6 +31,7 @@ workspace-hack = { path = "../workspace-hack" }
 
 [dev-dependencies]
 anyhow = "1"
+criterion = { workspace = true }
 console = "0.16"
 libtest-mimic = "0.8"
 matches = "0.1"
@@ -44,6 +45,10 @@ path = "src/bin/sqlparser.rs"
 
 [[test]]
 name = "parser_test"
+harness = false
+
+[[bench]]
+name = "parse_bench"
 harness = false
 
 [lints]
